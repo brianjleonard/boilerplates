@@ -1,0 +1,21 @@
+  whoami:
+    # A container that exposes an API to show its IP address
+    image: traefik/whoami
+    networks:
+      - frontend
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.lenovo.lab`)"
+  portainer:
+    image: portainer/portainer-ee:latest
+    ports:
+      # The HTTP port         
+#      - "8000:80"
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /portainer_data:/data portainer/portainer-ce:2.21.5
+    networks:
+      - frontend
+    restart: unless-stopped
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`portainer.lenovo.lab`)"

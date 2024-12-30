@@ -1,0 +1,13 @@
+services:
+  whoami:
+    # A container that exposes an API to show its IP address
+    image: traefik/whoami
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`whoami.lenovo.lab`) "
+      #|| Host(`brianjleonard.ddns.net`)"
+    networks:
+      - frontend  
+networks:
+  frontend:
+    external: true      

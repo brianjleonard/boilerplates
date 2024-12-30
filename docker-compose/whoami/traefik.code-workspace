@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "../traefik"
+		},
+		{
+			"path": "../nginx"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../portainer"
+		},
+		{
+			"name": "traefik-duckdns-letsencrypt",
+			"path": "../../../traefik-duckdns-letsencrypt"
+		}
+	],
+	"settings": {}
+}
